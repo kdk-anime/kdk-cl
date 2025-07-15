@@ -1,0 +1,30 @@
+@use "@/shared/styles";
+@use "more-sass/src" as more;
+
+.root {
+  @include more.reset-button();
+  background: rgb(styles.$background);
+  padding: styles.spacing(1);
+  border: 1px solid rgb(styles.$fill);
+  outline-offset: styles.spacing(0.5);
+  border-radius: styles.spacing(1);
+  cursor: pointer;
+  color: rgb(styles.$fill);
+
+  &:hover, &:focus {
+    background:
+            linear-gradient(rgba(styles.$fill, 0.1)),
+            linear-gradient(rgb(styles.$background));
+  }
+
+  &:active {
+    background:
+            linear-gradient(rgba(styles.$fill, 0.2)),
+            linear-gradient(rgb(styles.$background));
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}

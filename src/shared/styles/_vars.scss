@@ -1,0 +1,14 @@
+@use "more-sass/src" as more;
+
+$fillDefault: #4E4E4E;
+$backgroundDefault: #F0F0F0;
+$color: #1E1E1E;
+$linkDefaultColor: #2B7699;
+
+$spacingPoint: 0.5rem;
+$animationTime: 0.2s;
+
+$fill: var(--kdk-fill-color, more.hex-to-rgb($fillDefault));
+$background: var(--kdk-background, more.hex-to-rgb($backgroundDefault));
+$color: var(--kdk-text-color, more.hex-to-rgb($color));
+$linkColor: var(--kdk-link-color, more.hex-to-rgb($linkDefaultColor));

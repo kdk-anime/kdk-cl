@@ -1,0 +1,20 @@
+@use "@/shared/styles";
+
+.root {
+  display: grid;
+  height: 100%;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+          "header content"
+          "footer footer";
+
+  @include styles.media-mobile {
+    grid-template-columns: unset;
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas:
+            "content"
+            "header"
+            "footer";
+  }
+}

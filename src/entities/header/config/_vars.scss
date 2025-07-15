@@ -1,0 +1,5 @@
+@use "@/shared/styles";
+
+$background: styles.$fill;
+$color: styles.$background;
+$size: styles.spacing(6.25);

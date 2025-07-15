@@ -1,0 +1,5 @@
+@use "vars";
+
+@function spacing($number) {
+  @return $number * vars.$spacingPoint;
+}

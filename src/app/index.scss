@@ -1,0 +1,14 @@
+@forward "normalize.css/normalize.css";
+
+@forward "material-icons/iconfont/filled" with (
+  $material-icons-font-path: 'material-icons/iconfont/',
+  $material-icons-font-size: 1em
+);
+
+:root {
+  font-family: 'Roboto', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+}

@@ -1,0 +1,28 @@
+@use "@/shared/styles";
+@use "more-sass/src" as more;
+
+.root {
+  position: relative;
+  z-index: 1;
+  padding: styles.spacing(2) styles.spacing(1);
+  border: 1px solid rgb(styles.$fill);
+  outline-offset: styles.spacing(0.5);
+  border-radius: styles.spacing(1);
+  cursor: pointer;
+  background: var(--value, #000);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.content {
+  color: rgb(styles.$background);
+  @include styles.text-stroke(1px, rgb(styles.$fill));
+}

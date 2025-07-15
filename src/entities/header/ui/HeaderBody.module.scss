@@ -1,0 +1,22 @@
+@use "@/shared/styles";
+@use "../config/vars" as vars;
+
+.content, .root {
+  background: rgb(vars.$background);
+  color: rgb(vars.$color);
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  width: vars.$size;
+  overflow: hidden auto;
+  font-size: styles.spacing(4);
+
+  @include styles.media-mobile {
+    flex-direction: row;
+    width: unset;
+    height: vars.$size;
+    overflow: auto hidden;
+  }
+}

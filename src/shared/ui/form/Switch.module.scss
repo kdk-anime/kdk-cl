@@ -1,0 +1,54 @@
+@use "@/shared/styles";
+
+$dotMargin: 1px;
+
+.element {
+  cursor: pointer;
+}
+
+.root {
+  $height: styles.spacing(2.5);
+  $width: styles.spacing(4.5);
+  display: inline-block;
+  vertical-align: text-bottom;
+  position: relative;
+  height: $height;
+  width: $width;
+  border-radius: 99px;
+  border: 1px solid rgb(styles.$fill);
+  background: rgb(styles.$background);
+
+  &::after {
+    $size: calc($height - $dotMargin * 4);
+    content: "";
+    display: block;
+    position: absolute;
+    top: $dotMargin;
+    right: calc($width - $size - $dotMargin * 3);
+    width: $size;
+    height: $size;
+    border: 1px solid rgb(styles.$fill);
+    border-radius: 99px;
+    background: rgb(styles.$background);
+    transition: styles.$animationTime right;
+  }
+}
+
+.input:checked + .root::after {
+  background: rgb(styles.$fill);
+  right: $dotMargin;
+}
+
+.input:disabled + .root {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.content:not(:empty) {
+  margin-left: styles.spacing(0.5);
+}
